@@ -1,0 +1,8 @@
+{
+	"AUTHOR" : "",
+	"INSTALL_MSG" : "",
+	"NAME" : "optin",
+	"SHORT" : "Allow users to opt-in/opt-out of roles..",
+	"DESCRIPTION" : "Allow users to opt-in/opt-out of roles.  Useful to expose/hide channels based on those roles or join @-able groups.",
+	"TAGS" : ["utility", "management"]
+}
