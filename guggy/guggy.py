@@ -40,6 +40,7 @@ class Guggy:
                 if result["reqId"]:
                     try:
                         e = discord.Embed()
+                        e.set_thumbnail(url=result["animated"][0]["gif"]["lowres"]["secureUrl"])
                         e.set_image(url=result["animated"][0]["gif"]["hires"]["secureUrl"])
                         await self.bot.send_message(chan, embed=e)
                     except:
