@@ -40,8 +40,8 @@ class Guggy:
                 if result["reqId"]:
                     try:
                         e = discord.Embed()
-                        e.set_thumbnail(url=result["animated"][0]["gif"]["lowQuality"]["secureUrl"])
-                        e.set_image(url=result["animated"][0]["gif"]["hires"]["secureUrl"])
+                        e.set_image(url=result["animated"][0]["gif"]["lowQuality"]["secureUrl"])
+                        #e.set_image(url=result["animated"][0]["gif"]["hires"]["secureUrl"])
                         await self.bot.send_message(chan, embed=e)
                     except:
                         await self.bot.say("Error loading image.")
