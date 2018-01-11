@@ -14,11 +14,11 @@ class Giffed:
 
     @commands.command(pass_context=True, no_pm=True)
     async def gregg(self, ctx):
-        await self.bot.send_file(ctx.message.channel, filename="data/giffed/gregg.gif")
+        await self.bot.send_file(ctx.message.channel, "data/giffed/gregg.gif")
     
     @commands.command(pass_context=True, no_pm=True)
     async def mae(self, ctx):
-        await self.bot.send_file(ctx.message.channel, filename="data/giffed/mae.gif")
+        await self.bot.send_file(ctx.message.channel, "data/giffed/mae.gif")
     
 
 def setup(bot):
