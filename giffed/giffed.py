@@ -20,6 +20,10 @@ class Giffed:
     async def mae(self, ctx):
         await self.bot.send_file(ctx.message.channel, "data/giffed/mae.gif")
     
+    @commands.command(pass_context=True, no_pm=True)
+    async def sheriffQuinn(self, ctx):
+        await self.bot.send_file(ctx.message.channel, "data/giffed/sheriffQuinn.jpg")
+    
 
 def setup(bot):
     bot.add_cog(Giffed(bot))
