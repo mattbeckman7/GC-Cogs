@@ -24,6 +24,10 @@ class Giffed:
     async def sheriffQuinn(self, ctx):
         await self.bot.send_file(ctx.message.channel, "data/giffed/sheriffQuinn.jpg")
     
+    @commands.command(pass_context=True, no_pm=True)
+    async def HSDscar(self, ctx):
+        await self.bot.send_file(ctx.message.channel, "data/giffed/HSDscar.gif")
+    
 
 def setup(bot):
     bot.add_cog(Giffed(bot))
