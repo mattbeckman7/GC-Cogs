@@ -53,6 +53,38 @@ class Guggy:
 
 
     @commands.command(pass_context=True, no_pm=True)
+    async def guggyhd(self, ctx, *keywords):
+        """Usage: /guggyhd text caption here"""
+        chan = ctx.message.channel
+    
+        if keywords:
+            keywords = " ".join(keywords)
+        else:
+            await self.bot.send_cmd_help(ctx)
+            return
+
+        req_head = {"Content-Type":"application/json", "apiKey":self.settings["GUGGY_API_KEY"]}
+        req_body = {"sentence":keywords}
+
+        async with aiohttp.post(GUGGY_URL, data=json.dumps(req_body), headers=req_head) as r:
+            result = await r.json()
+            if r.status == 200:
+                if result["reqId"]:
+                    try:
+                        e = discord.Embed()
+                        #e.set_image(url=result["animated"][0]["gif"]["lowQuality"]["secureUrl"])
+                        e.set_image(url=result["animated"][0]["gif"]["hires"]["secureUrl"])
+                        await self.bot.send_message(chan, embed=e)
+                    except:
+                        await self.bot.say("Error loading image.")
+                else:
+                    await self.bot.say("No results found.")
+            else:
+                await self.bot.say("Error contacting the API")
+            
+
+
+    @commands.command(pass_context=True, no_pm=True)
     @checks.admin_or_permissions(administrator=True)
     async def guggyapi(self, ctx, guggyapi: str):
         self.settings["GUGGY_API_KEY"] = guggyapi
