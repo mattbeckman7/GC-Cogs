@@ -31,6 +31,10 @@ class Giffed:
     @commands.command(pass_context=True, no_pm=True)
     async def stonewall(self, ctx):
         await self.bot.send_file(ctx.message.channel, "data/giffed/stonewall.gif")
+
+    @commands.command(pass_context=True, no_pm=True)
+    async def wave(self, ctx):
+        await self.bot.send_file(ctx.message.channel, "data/giffed/wave.gif")
     
 
 def setup(bot):
